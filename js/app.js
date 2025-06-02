@@ -19,8 +19,6 @@ let transactions = [];
 let currentFilter = 'all';
 let currentMonth = '';
 
-// ---- Funções ----
-
 // Salvar no localStorage
 function saveTransactions() {
   localStorage.setItem('transactions', JSON.stringify(transactions));
@@ -34,7 +32,7 @@ function loadTransactions() {
   }
 }
 
-// Formatar para moeda brasileira
+// Formatar para real
 function formatCurrency(value) {
   return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
@@ -94,7 +92,7 @@ function updateList() {
     .forEach(tx => {
       const li = document.createElement('li');
       li.style.color = tx.amount < 0 ? 'red' : 'green';
-      li.textContent = `${tx.date} | ${tx.description} — ${formatCurrency(tx.amount)}`;
+      li.textContent = `${tx.description} | ${formatCurrency(tx.amount)} | ${tx.date}`;
 
       const btnRemove = document.createElement('button');
       btnRemove.textContent = 'x';
@@ -104,6 +102,7 @@ function updateList() {
       transactionList.appendChild(li);
     });
 }
+
 
 // Atualizar o resumo (saldo, entradas, saídas)
 function updateSummary() {

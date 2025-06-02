@@ -1,4 +1,4 @@
-/* Fundo da página (madeira) */
+/* Fundo da página */
 body {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Container como folha de papel */
+/* Container */
 .container {
   max-width: 800px;
   margin: 50px auto;
@@ -28,12 +28,19 @@ h1, h2 {
 }
 
 /* Controles */
-.controls, .filters, .month-filter {
-  display: flex;
-  flex-wrap: wrap;
+.controls {
+  display: grid;
+  grid-template-columns: 120px 150px 1fr 120px 100px;
   gap: 10px;
-  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  justify-content: center;
+}
+
+
+/* Ajuste para o botão */
+.controls button {
+  width: 100px;
 }
 
 /* Inputs e select */
@@ -54,6 +61,29 @@ button {
 
 button:hover {
   background-color: #ddd;
+}
+
+/* Container para filtros e mês */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Filtro do mês */
+.month-filter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 /* Lista de lançamentos */
@@ -136,8 +166,16 @@ body.dark #transaction-list li {
 
 /* Responsivo */
 @media (max-width: 600px) {
-  .controls, .filters, .month-filter {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-container {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
+  }
+
+  .filters, .month-filter {
+    justify-content: center;
   }
 }

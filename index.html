@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Controle de Gastos - Controle Financeiro</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Controle de Gastos</h1>
 
     <div class="controls">
-      <input type="text" id="desc" placeholder="Descrição">
-      <input type="number" id="amount" placeholder="Valor">
-      <input type="date" id="date">
-      <button id="add-btn">Adicionar</button>
       <select id="type">
         <option value="income">Entrada</option>
         <option value="expense">Saída</option>
-      </select>      
+      </select>
+      <input type="date" id="date" />
+      <input type="text" id="desc" placeholder="Descrição" />
+      <input type="number" id="amount" placeholder="Valor" />
+      <button id="add-btn">Adicionar</button>
     </div>
+    
 
-    <div class="filters">
-      <button id="filter-all">Todos</button>
-      <button id="filter-incomes">Entradas</button>
-      <button id="filter-expenses">Saídas</button>
-    </div>
-
-    <div class="month-filter">
-      <label for="month">Mês:</label>
-      <input type="month" id="month">
-    </div>
 
     <h2>Lançamentos</h2>
+
+    <div class="filter-container">
+      <div class="filters">
+        <button id="filter-all">Todos</button>
+        <button id="filter-incomes">Entradas</button>
+        <button id="filter-expenses">Saídas</button>
+      </div>
+
+      <div class="month-filter">
+        <label for="month">Mês:</label>
+        <input type="month" id="month" />
+      </div>
+    </div>
+
+
     <ul id="transaction-list"></ul>
 
     <h2>Resumo</h2>
